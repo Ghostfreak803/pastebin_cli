@@ -18,6 +18,8 @@ if args.mode == 'paste':
 
 
 elif args.mode == 'show':
+    if 'raw' not in user_input:
+        user_input = user_input.replace('pastebin.com', 'pastebin.com/raw')
     req = requests.get(user_input)
     print(req.text)
 
